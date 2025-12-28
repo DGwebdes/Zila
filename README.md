@@ -56,6 +56,7 @@ comp-cli ./images -q 70 -w 800 -o ./dist/images -f avif
 |------|-----------|-------------|---------|
 | `-q` | `--quality` | WebP quality (1-100) | 80 |
 | `-w` | `--width` | Target width in pixels | 1080 |
+| `-f` | `--format` | Target format         | webp |
 | `-o` | `--output` | Output directory path | ./output |
 | `-h` | `--help` | Show help information | - |
 | `-v` | `--version` | Show current version | - |
@@ -63,7 +64,7 @@ comp-cli ./images -q 70 -w 800 -o ./dist/images -f avif
 ## Supported Formats
 
 **Input:** `.jpeg`, `.jpg`, `.png`  
-**Output:** `.webp`
+**Output:** `target_format`
 
 ## How It Works
 
