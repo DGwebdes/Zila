@@ -18,7 +18,7 @@ const WELCOME_MESSAGE = chalk.italic(
     `\n\nImage.* to Image.webp Compressor. \n`
 );
 const NOTE = chalk.red.italic(
-    `If output source does't exist. comp-cli creates one relative to where comp-cli was executed from.`
+    `If output source does't exist. comp-cli creates one relative current working directory`
 );
 
 function welcome() {

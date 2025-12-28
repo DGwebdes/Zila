@@ -4,9 +4,8 @@ A fast CLI tool for batch compressing and converting images to WebP format.
 
 ## Features
 
-- ✅ Converts JPEG, JPG, and PNG images to WebP
+- ✅ Converts JPEG, JPG, and PNG images to specified format
 - ✅ Automatic compression and resizing
-- ✅ Interactive and command-line modes
 - ✅ Configurable quality and dimensions
 - ✅ Custom output directory support
 - ✅ Progress tracking during compression
@@ -47,18 +46,9 @@ comp-cli ./images -q 90 -w 1920
 comp-cli ./images -o ./compressed
 
 # All options combined
-comp-cli ./images -q 70 -w 800 -o ./dist/images
+comp-cli ./images -q 70 -w 800 -o ./dist/images -f avif
 ```
 
-### Interactive Mode
-If no arguments are provided, comp-cli starts in interactive mode:
-```bash
-comp-cli
-# Follow the prompts to enter your source directory
-```
-### Interactive Options
-Right now interactive mode only accepts the path directory to the images to be compressed.
-All other values fallback to default values. See below.
 
 ## Options
 
@@ -79,7 +69,7 @@ All other values fallback to default values. See below.
 
 1. Validates the input directory exists and contains supported images
 2. Creates the output directory if it doesn't exist
-3. Compresses each image to WebP format with specified settings
+3. Compresses each image to specified format with specified settings
 4. Resizes images to the target width (maintains aspect ratio)
 5. Reports progress and completion status
 
@@ -126,7 +116,7 @@ tests/
 - [ ] Add support for additional formats (GIF, BMP, TIFF)
 - [ ] Implement percentage-based resizing
 - [ ] Add concurrency control for large batches
-- [ ] Support for multiple output formats
+- [x] Support for multiple output formats
 - [ ] Dry-run mode to preview operations
 - [ ] Configuration file support
 - [ ] Unit tests
