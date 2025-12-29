@@ -87,7 +87,7 @@ export async function compressImages(config: CompressConfig) {
         let outputFormat = config.format
             ? config.format
             : OUTPUT_FORMAT_DEFAULT;
-        //Create output directory is doesn't exist
+
         if (!fs.existsSync(dirOutput)) {
             try {
                 fs.mkdirSync(dirOutput);

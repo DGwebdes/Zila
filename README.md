@@ -1,6 +1,6 @@
 # comp-cli
 
-A fast CLI tool for batch compressing and converting images to WebP format.
+A fast CLI tool for batch compressing and converting images to specified format.
 
 ## Features
 
@@ -101,17 +101,6 @@ npm run link       # Build and link globally
 npm run unlink     # Unlink from global
 ```
 
-### Project Structure
-```
-src/
-├── index.ts        # Main entry point
-├── validation.ts   # Input validation and argument parsing
-├── logger.ts       # Logging utilities
-└── info.ts         # Help text and constants
-tests/
-└── compression.tests.ts    # Vitest testing
-```
-
 ## Roadmap
 
 - [ ] Add support for additional formats (GIF, BMP, TIFF)
@@ -120,7 +109,7 @@ tests/
 - [x] Support for multiple output formats
 - [ ] Dry-run mode to preview operations
 - [ ] Configuration file support
-- [ ] Unit tests
+- [x] Unit tests
 
 ## License
 

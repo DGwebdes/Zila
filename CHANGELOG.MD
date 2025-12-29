@@ -9,3 +9,17 @@
 ### Fixed
 
 -   minor spinner bug
+
+## [0.1.0] - 2025-12-29
+
+### Added
+
+-   format flags.
+
+### Fixed
+
+-   output validation bug
+
+### Removed
+
+-   'interactive' mode (not necessary at all, initial part of the project)
