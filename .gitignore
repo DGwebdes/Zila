@@ -6,3 +6,8 @@ output/
 
 .env
 .npmignore
+
+
+# Added by cargo
+
+/target
