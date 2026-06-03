@@ -5,15 +5,29 @@ mod prompts;
 mod scaffold;
 mod templates;
 
-use cli::{Framework, PackageManager, ProjectConfig};
+use cli::{Cli, Commands};
 
-fn main() {
+use clap::Parser;
 
-    let config = ProjectConfig {
-        name: String::from("my-app"),
-        framework: Framework::React,
-        package_manager: PackageManager::Npm
-    };
+fn main() -> anyhow::Result<()> {
 
-    println!("Creating project: {}", config.name);
+    let cli = Cli::parse();
+
+    match cli.command {
+        Some(Commands::New { name }) => {
+            println!("GodZila {} into existence...", name);
+
+
+            let _config = prompts::ask(name)?;
+
+            println!("\nConfig read, scaffolding soon");
+        }
+
+        None => {
+            println!("Run 'zila new <project-name>' to get started");
+        }
+
+    }
+
+    Ok(())
 }
