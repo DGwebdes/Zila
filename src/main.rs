@@ -18,9 +18,10 @@ fn main() -> anyhow::Result<()> {
             println!("GodZila {} into existence...", name);
 
 
-            let _config = prompts::ask(name)?;
+            let config = prompts::ask(name)?;
 
-            println!("\nConfig read, scaffolding soon");
+            scaffold::run(&config)?;
+    
         }
 
         None => {
