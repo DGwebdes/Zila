@@ -25,9 +25,8 @@ const PACKAGE_JSON: &str = r#"{
       "typescript": "^6.0.3",
       "vite": "^8.0.16",
       "tailwindcss": "^4.3.0",
-      "tailwindcss/vite": "^4.3.0",
-      "postcss": "^8.5.15",
-      "autoprefixer", "^10.5.0",
+      "@tailwindcss/vite": "^4.3.0",
+      "autoprefixer": "^10.5.0",
       "eslint": "^10.4.1",
       "@typescript-eslint/eslint-plugin": "^8.60.1"
     }
@@ -82,12 +81,6 @@ export default {
     plugins: [],
 } satisfies Config"#;
 
-const POSTCSS_CONFIG:  &str = r#"export default {
-    plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-    },
-}"#;
 
 const INDEX_HTML: &str = r#"<!doctype html>
 <html lang="en">
@@ -107,7 +100,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')).render(
     <StrictMode>
         <App />
     </StrictMode>
@@ -115,7 +108,7 @@ createRoot(document.getElementById("root")!).render(
 
 const APP_TSX: &str = r#"function App() {
     return (
-        <main className="min-h-screen bg-white>
+        <main className="min-h-screen bg-white">
             <h1 className="text-2xl font-bold"> Hello from Zila </h1>
         </main>
     )
@@ -149,7 +142,6 @@ pub fn files() -> Vec<TemplateFile> {
         TemplateFile { path: "vite.config.ts",      content: VITE_CONFIG},
         TemplateFile { path: "tsconfig.json",       content: TSCONFIG},
         TemplateFile { path: "tailwind.config.ts",  content: TAILWIND_CONFIG},
-        TemplateFile { path: "postcss.config.js",   content: POSTCSS_CONFIG},
         TemplateFile { path: "index.html",          content: INDEX_HTML},
         TemplateFile { path: "src/main.tsx",        content: MAIN_TSX},
         TemplateFile { path: "src/App.tsx",         content: APP_TSX},
