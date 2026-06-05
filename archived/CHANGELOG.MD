@@ -22,4 +22,4 @@
 
 ### Removed
 
--   'interactive' mode (not necessary at all, initial part of the project)
+-   'interactive' mode (not necessary at all, initial part of the project)ARCHIVED
