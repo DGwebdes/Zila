@@ -9,7 +9,7 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         "React      (Vite + Typescript + Tailwindcss)",
         "Express    (Typescript REST API)",
         "Hono       (Typescript, lightweight and fast)",
-        "Next.js    (Typescript + Tailwindcss)",
+        "Vue        (Vue + Typescript + Eslint)",
     ];
 
     let framework_index = Select::with_theme(&theme)
