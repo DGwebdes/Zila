@@ -1,139 +1,33 @@
 
-
 use super::TemplateFile;
-use super::{GITIGNORE, ENV_EXAMPLE};
 
-const PACKAGE_JSON: &str = r#"{
-    "name": "{{name}}",
-    "private": true,
-    "version": "0.0.1",
-    "type": "module",
-    "scripts": {
-      "dev": "vite",
-      "build": "tsc && vite build",
-      "preview": "vite preview"
-    },
-    "dependencies": {
-      "react": "^19.2",
-      "react-dom": "^19.2.7",
-      "react-router-dom": "^7.17.0"
-    },
-    "devDependencies": {
-      "@types/react": "^19.2.16",
-      "@types/react-dom": "^19.2.3",
-      "@vitejs/plugin-react": "^6.0.2",
-      "typescript": "^6.0.3",
-      "vite": "^8.0.16",
-      "tailwindcss": "^4.3.0",
-      "@tailwindcss/vite": "^4.3.0",
-      "autoprefixer": "^10.5.0",
-      "eslint": "^10.4.1",
-      "@typescript-eslint/eslint-plugin": "^8.60.1"
-    }
-}"#;
+const PACKAGE_JSON: &str = include_str!("../../templates/react/package.json");
 
+const VITE_CONFIG: &str = include_str!("../../templates/react/vite.config.ts");
 
-const VITE_CONFIG: &str = r#"import { defineConfig } from 'vite'
-import path from 'path'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+const ESLINT_CONFIG: &str = include_str!("../../templates/react/eslint.config.js");
 
-export default defineConfig({
-    plugins: [react(), tailwindcss()],
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src')
-        }
-    }
-})"#;
+const PNPM_LOCK: &str = include_str!("../../templates/react/pnpm-lock.yaml");
 
-const TSCONFIG: &str = r#"{
-    "compilerOptions": {
-        "target": "ES2020",
-        "useDefineForClassFields": true,
-        "lib": ["ES2020", "DOM", "DOM.Iterable"],
-        "module": "ESNext",
-        "skipLibCheck": true,
-        "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
-        "isolatedDetection": true,
-        "moduleDetection": "force",
-        "noEmit": true,
-        "jsx": "react-jsx",
-        "strict": true,
-        "paths": {
-            "@/*": ["./src/*"]
-        }
-    },
-    "include": ["src"]
-}"#;
+const TSCONFIG: &str = include_str!("../../templates/react/tsconfig.json");
+const TSCONFIG_APP: &str = include_str!("../../templates/react/tsconfig.app.json");
+const TSCONFIG_NODE: &str = include_str!("../../templates/react/tsconfig.node.json");
 
-const TAILWIND_CONFIG: &str = r#"import type { Config } from 'tailwindcss"
+const INDEX_HTML: &str = include_str!("../../templates/react/index.html");
 
-export default {
-    content: [
-        './index.html',
-        './src/**/*.{ts,tsx}',
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
-} satisfies Config"#;
+const MAIN_TSX: &str = include_str!("../../templates/react/src/main.tsx");
 
+const APP_TSX: &str = include_str!("../../templates/react/src/App.tsx");
 
-const INDEX_HTML: &str = r#"<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{name}}</title>
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
-    </body>
-</html>"#;
+const INDEX_CSS: &str = include_str!("../../templates/react/src/index.css");
 
-const MAIN_TSX: &str = r#"import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App'
+const APP_CSS: &str = include_str!("../../templates/react/src/App.css");
 
-createRoot(document.getElementById('root')).render(
-    <StrictMode>
-        <App />
-    </StrictMode>
-)"#;
+const GITIGNORE: &str = include_str!("../../templates/react/.gitignore");
 
-const APP_TSX: &str = r#"function App() {
-    return (
-        <main className="min-h-screen bg-white">
-            <h1 className="text-2xl font-bold"> Hello from Zila </h1>
-        </main>
-    )
-}
+const ENV_EXAMPLE: &str = include_str!("../../templates/react/.env.example");
 
-export default App"#;
-
-const INDEX_CSS: &str = r#"@tailwind base;
-@tailwind components;
-@tailwind utilities;"#;
-
-const DEVCONTAINER: &str = r#"{
-    "name": "{{name}}",
-    "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
-    "forwardPorts": [5173],
-    "postCreateCommand": "pnpm install",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "dbaeumer.vscode-eslint",
-                "bradlc.vscode-tailwindcss",
-            ]
-        }
-    }
-}"#;
+const DEVCONTAINER: &str = include_str!("../../templates/react/.devcontainer/devcontainer.json");
 
 pub fn files() -> Vec<TemplateFile> {
 
@@ -141,10 +35,14 @@ pub fn files() -> Vec<TemplateFile> {
         TemplateFile { path: "package.json",        content: PACKAGE_JSON},
         TemplateFile { path: "vite.config.ts",      content: VITE_CONFIG},
         TemplateFile { path: "tsconfig.json",       content: TSCONFIG},
-        TemplateFile { path: "tailwind.config.ts",  content: TAILWIND_CONFIG},
+        TemplateFile { path: "tsconfig.node.json",  content: TSCONFIG_NODE},
+        TemplateFile { path: "tsconfig.app.json",   content: TSCONFIG_APP},
+        TemplateFile { path: "eslint.config.js",    content: ESLINT_CONFIG},
+        TemplateFile { path: "pnpm-lock.yaml",      content: PNPM_LOCK},
         TemplateFile { path: "index.html",          content: INDEX_HTML},
         TemplateFile { path: "src/main.tsx",        content: MAIN_TSX},
         TemplateFile { path: "src/App.tsx",         content: APP_TSX},
+        TemplateFile { path: "src/App.css",         content: APP_CSS},
         TemplateFile { path: "src/index.css",       content: INDEX_CSS},
         TemplateFile { path: ".gitignore",          content: GITIGNORE},
         TemplateFile { path: ".env.example",        content: ENV_EXAMPLE},

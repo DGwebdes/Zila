@@ -26,7 +26,6 @@ pub enum Framework {
     React,
     Express,
     Hono,
-    Next
 }
 
 pub enum PackageManager {

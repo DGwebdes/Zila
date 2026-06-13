@@ -2,6 +2,8 @@ use dialoguer::{Select, Confirm};
 use dialoguer::theme::ColorfulTheme;
 use super::cli::{Framework, PackageManager, ProjectConfig};
 
+use colored::Colorize;
+
 pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
     let theme = ColorfulTheme::default();
 
@@ -9,7 +11,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         "React      (Vite + Typescript + Tailwindcss)",
         "Express    (Typescript REST API)",
         "Hono       (Typescript, lightweight and fast)",
-        "Next.js    (Typescript + Tailwindcss)",
     ];
 
     let framework_index = Select::with_theme(&theme)
@@ -22,7 +23,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         0 => Framework::React,
         1 => Framework::Express,
         2 => Framework::Hono,
-        3 => Framework::Next,
         _ => Framework::React,
     };
 
@@ -48,7 +48,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         Framework::React => "React + Vite + Typescript + Tailwindcss",
         Framework::Express => "Express + Typescript",
         Framework::Hono => "Hono + Typescript",
-        Framework::Next => "Nextjs + Typescript + Tailwindcss",
     };
 
     let pm_name = match package_manager {
@@ -57,9 +56,10 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         PackageManager::Bun => "bun",
     };
 
-    println!("\n Project: {}", name);
-    println!(" Stack: {}", framework_name);
-    println!(" Manager: {}", pm_name);
+    println!("\n {}", "Project Summary".cyan().bold());
+    println!(" {} {}", "Project:".dimmed(), name.yellow());
+    println!(" {} {}", "Stack:".dimmed(), framework_name.yellow());
+    println!(" {} {}", "Manager:".dimmed(), pm_name.yellow());
 
     let confirmed = Confirm::with_theme(&theme)
         .with_prompt("Zila it?")

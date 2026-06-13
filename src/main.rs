@@ -6,10 +6,18 @@ mod scaffold;
 mod templates;
 
 use cli::{Cli, Commands};
-
+use colored::Colorize;
 use clap::Parser;
 
-fn main() -> anyhow::Result<()> {
+
+fn main() {
+    if let Err(e) = run_app() {
+        eprintln!("\n {}\n", format!("Error {}", e).red().bold());
+        std::process::exit(1);
+    }
+}
+
+fn run_app() -> anyhow::Result<()> {
 
     let cli = Cli::parse();
 
