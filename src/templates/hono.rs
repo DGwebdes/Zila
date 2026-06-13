@@ -1,6 +1,5 @@
 
 use super::TemplateFile;
-use super::{GITIGNORE, ENV_EXAMPLE};
 
 const PACKAGE_JSON: &str = include_str!("../../templates/hono/package.json");
 const PNPM_LOCK: &str = include_str!("../../templates/hono/pnpm-lock.yaml");
@@ -14,6 +13,9 @@ const INDEX_TS: &str = include_str!("../../templates/hono/src/index.ts");
 const CONTROLLERS_INDEX: &str = include_str!("../../templates/hono/src/controllers/index.ts");
 const ROUTES_INDEX: &str = include_str!("../../templates/hono/src/routes/index.ts");
 const DEVCONTAINER: &str = include_str!("../../templates/hono/.devcontainer/devcontainer.json");
+
+const GITIGNORE: &str = include_str!("../../templates/hono/.gitignore");
+const ENV_EXAMPLE: &str = include_str!("../../templates/hono/.env.example");
 
 
 pub fn files() -> Vec<TemplateFile> {

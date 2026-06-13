@@ -1,7 +1,5 @@
 
-
 use super::TemplateFile;
-use super::{GITIGNORE, ENV_EXAMPLE};
 
 const PACKAGE_JSON: &str = include_str!("../../templates/react/package.json");
 
@@ -24,6 +22,10 @@ const APP_TSX: &str = include_str!("../../templates/react/src/App.tsx");
 const INDEX_CSS: &str = include_str!("../../templates/react/src/index.css");
 
 const APP_CSS: &str = include_str!("../../templates/react/src/App.css");
+
+const GITIGNORE: &str = include_str!("../../templates/react/.gitignore");
+
+const ENV_EXAMPLE: &str = include_str!("../../templates/react/.env.example");
 
 const DEVCONTAINER: &str = include_str!("../../templates/react/.devcontainer/devcontainer.json");
 
