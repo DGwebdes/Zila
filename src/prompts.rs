@@ -9,7 +9,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         "React      (Vite + Typescript + Tailwindcss)",
         "Express    (Typescript REST API)",
         "Hono       (Typescript, lightweight and fast)",
-        "Vue        (Vue + Typescript + Eslint)",
     ];
 
     let framework_index = Select::with_theme(&theme)
@@ -22,7 +21,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         0 => Framework::React,
         1 => Framework::Express,
         2 => Framework::Hono,
-        3 => Framework::Next,
         _ => Framework::React,
     };
 
@@ -48,7 +46,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         Framework::React => "React + Vite + Typescript + Tailwindcss",
         Framework::Express => "Express + Typescript",
         Framework::Hono => "Hono + Typescript",
-        Framework::Next => "Nextjs + Typescript + Tailwindcss",
     };
 
     let pm_name = match package_manager {

@@ -2,7 +2,6 @@
 pub mod react;
 pub mod express;
 pub mod hono;
-pub mod next;
 
 pub struct TemplateFile {
 

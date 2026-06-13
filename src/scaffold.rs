@@ -12,7 +12,6 @@ pub fn run(config: &ProjectConfig) -> Result<(), anyhow::Error> {
         Framework::React => crate::templates::react::files(),
         Framework::Express => crate::templates::express::files(),
         Framework::Hono => crate::templates::hono::files(),
-        Framework::Next => crate::templates::next::files(),
     };
 
     let root = Path::new(&config.name);
