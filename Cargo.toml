@@ -1,5 +1,5 @@
 [package]
-name = "zila"
+name = "zila-cli"
 version = "0.1.0"
 edition = "2024"
 description = "Zila spins up a ts project for you in no time"
@@ -8,6 +8,10 @@ repository = "https://github.com/DGwebdes/Zila"
 readme = "README.md"
 keywords = ["cli", "scaffold", "templates", "typescript", "frameworks"]
 categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "zila"
+path = "src/main.rs"
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
