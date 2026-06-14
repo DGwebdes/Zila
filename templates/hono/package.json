@@ -1,5 +1,5 @@
 {
-  "name": "hono",
+  "name": "{{name}}",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
