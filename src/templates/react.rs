@@ -16,7 +16,6 @@ const APP_TSX: &str = include_str!("../../templates/react/src/App.tsx");
 const INDEX_CSS: &str = include_str!("../../templates/react/src/index.css");
 const APP_CSS: &str = include_str!("../../templates/react/src/App.css");
 
-
 const README: &str = include_str!("../../templates/react/README.md");
 // const ZILA_ICO: &[u8] = include_bytes!("../../templates/react/public/zila.jpg");
 
@@ -27,22 +26,70 @@ const DEVCONTAINER: &str = include_str!("../../templates/react/.devcontainer/dev
 
 pub fn files() -> Vec<TemplateFile> {
     vec![
-        TemplateFile { path: "package.json",        content: PACKAGE_JSON},
-        TemplateFile { path: "vite.config.ts",      content: VITE_CONFIG},
-        TemplateFile { path: "tsconfig.json",       content: TSCONFIG},
-        TemplateFile { path: "tsconfig.node.json",  content: TSCONFIG_NODE},
-        TemplateFile { path: "tsconfig.app.json",   content: TSCONFIG_APP},
-        TemplateFile { path: "eslint.config.js",    content: ESLINT_CONFIG},
-        TemplateFile { path: "pnpm-lock.yaml",      content: PNPM_LOCK},
-        TemplateFile { path: "index.html",          content: INDEX_HTML},
-        TemplateFile { path: "src/main.tsx",        content: MAIN_TSX},
-        TemplateFile { path: "src/App.tsx",         content: APP_TSX},
-        TemplateFile { path: "src/App.css",         content: APP_CSS},
-        TemplateFile { path: "src/index.css",       content: INDEX_CSS},
-        TemplateFile { path: "README.md",           content: README},
+        TemplateFile {
+            path: "package.json",
+            content: PACKAGE_JSON,
+        },
+        TemplateFile {
+            path: "vite.config.ts",
+            content: VITE_CONFIG,
+        },
+        TemplateFile {
+            path: "tsconfig.json",
+            content: TSCONFIG,
+        },
+        TemplateFile {
+            path: "tsconfig.node.json",
+            content: TSCONFIG_NODE,
+        },
+        TemplateFile {
+            path: "tsconfig.app.json",
+            content: TSCONFIG_APP,
+        },
+        TemplateFile {
+            path: "eslint.config.js",
+            content: ESLINT_CONFIG,
+        },
+        TemplateFile {
+            path: "pnpm-lock.yaml",
+            content: PNPM_LOCK,
+        },
+        TemplateFile {
+            path: "index.html",
+            content: INDEX_HTML,
+        },
+        TemplateFile {
+            path: "src/main.tsx",
+            content: MAIN_TSX,
+        },
+        TemplateFile {
+            path: "src/App.tsx",
+            content: APP_TSX,
+        },
+        TemplateFile {
+            path: "src/App.css",
+            content: APP_CSS,
+        },
+        TemplateFile {
+            path: "src/index.css",
+            content: INDEX_CSS,
+        },
+        TemplateFile {
+            path: "README.md",
+            content: README,
+        },
         //TemplateFile { path: "public/zila.jpg",     content: ZILA_ICO},
-        TemplateFile { path: ".gitignore",          content: GITIGNORE},
-        TemplateFile { path: ".env.example",        content: ENV_EXAMPLE},
-        TemplateFile { path: ".devcontainer/devcontainer.json", content: DEVCONTAINER},
+        TemplateFile {
+            path: ".gitignore",
+            content: GITIGNORE,
+        },
+        TemplateFile {
+            path: ".env.example",
+            content: ENV_EXAMPLE,
+        },
+        TemplateFile {
+            path: ".devcontainer/devcontainer.json",
+            content: DEVCONTAINER,
+        },
     ]
 }
