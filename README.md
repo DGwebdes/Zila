@@ -49,17 +49,14 @@ Every project includes:
 ```
 my-app/
 ├── src/
-│   ├── components/
-│   ├── hooks/
-│   ├── lib/
-│   ├── assets/
+│   ├── index.css
+│   ├── App.css
 │   ├── App.tsx
 │   └── main.tsx
 ├── public/
 ├── index.html
 ├── vite.config.ts
 ├── tsconfig.json
-├── tailwind.config.ts
 ├── .devcontainer/
 ├── .env.example
 └── package.json
@@ -76,7 +73,6 @@ my-app/
 │   ├── middleware/
 │   ├── controllers/
 │   ├── lib/
-│   ├── types/
 │   ├── app.ts
 │   └── index.ts
 ├── tsconfig.json
@@ -96,7 +92,6 @@ my-app/
 │   ├── middleware/
 │   ├── controllers/
 │   ├── lib/
-│   ├── types/
 │   ├── app.ts
 │   └── index.ts
 ├── tsconfig.json
