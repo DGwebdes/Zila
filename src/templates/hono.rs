@@ -1,4 +1,3 @@
-
 use super::TemplateFile;
 
 const PACKAGE_JSON: &str = include_str!("../../templates/hono/package.json");
@@ -25,7 +24,6 @@ const DEVCONTAINER: &str = include_str!("../../templates/hono/.devcontainer/devc
 const GITIGNORE: &str = include_str!("../../templates/hono/.gitignore");
 const ENV_EXAMPLE: &str = include_str!("../../templates/hono/.env.example");
 
-
 pub fn files() -> Vec<TemplateFile> {
     vec![
         TemplateFile { path: "package.json",                    content: PACKAGE_JSON       },
@@ -47,4 +45,3 @@ pub fn files() -> Vec<TemplateFile> {
         TemplateFile { path: ".devcontainer/devcontainer.json", content: DEVCONTAINER       },
     ]
 }
-

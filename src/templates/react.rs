@@ -1,4 +1,3 @@
-
 use super::TemplateFile;
 
 const PACKAGE_JSON: &str = include_str!("../../templates/react/package.json");
@@ -27,7 +26,6 @@ const ENV_EXAMPLE: &str = include_str!("../../templates/react/.env.example");
 const DEVCONTAINER: &str = include_str!("../../templates/react/.devcontainer/devcontainer.json");
 
 pub fn files() -> Vec<TemplateFile> {
-
     vec![
         TemplateFile { path: "package.json",        content: PACKAGE_JSON},
         TemplateFile { path: "vite.config.ts",      content: VITE_CONFIG},

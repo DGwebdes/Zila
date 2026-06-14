@@ -1,6 +1,6 @@
-use dialoguer::{Select, Confirm};
-use dialoguer::theme::ColorfulTheme;
 use super::cli::{Framework, PackageManager, ProjectConfig};
+use dialoguer::theme::ColorfulTheme;
+use dialoguer::{Confirm, Select};
 
 use colored::Colorize;
 
@@ -26,7 +26,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         _ => Framework::React,
     };
 
-
     let package_managers = vec!["npm", "pnpm", "bun"];
 
     let pm_index = Select::with_theme(&theme)
@@ -39,10 +38,8 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         0 => PackageManager::Npm,
         1 => PackageManager::Pnpm,
         2 => PackageManager::Bun,
-        _ => PackageManager::Pnpm
+        _ => PackageManager::Pnpm,
     };
-
-    
 
     let framework_name = match framework {
         Framework::React => "React + Vite + Typescript + Tailwindcss",
@@ -76,4 +73,3 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
         package_manager,
     })
 }
-
