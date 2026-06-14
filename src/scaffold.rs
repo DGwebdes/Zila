@@ -49,7 +49,7 @@ pub fn run(config: &ProjectConfig) -> Result<(), anyhow::Error> {
         ));
     }
 
-    fs::create_dir(&root)?;
+    fs::create_dir(root)?;
 
     println!(
         "\n {}",
@@ -74,7 +74,7 @@ pub fn run(config: &ProjectConfig) -> Result<(), anyhow::Error> {
 
     Command::new("git")
         .args(["init"])
-        .current_dir(&root)
+        .current_dir(root)
         .output()?;
 
     println!(" {} git init", "Done".green());
@@ -86,7 +86,7 @@ pub fn run(config: &ProjectConfig) -> Result<(), anyhow::Error> {
 
     let status = Command::new(pm)
         .args(["install"])
-        .current_dir(&root)
+        .current_dir(root)
         .status()?;
 
     if !status.success() {

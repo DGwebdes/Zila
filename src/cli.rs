@@ -7,7 +7,6 @@ use clap::Subcommand;
     about = "a god, if you will, of scaffolding projects",
     version = "0.1.0"
 )]
-
 pub struct Cli {
     #[command(subcommand)]
     pub command: Option<Commands>,
