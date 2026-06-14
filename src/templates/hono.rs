@@ -1,4 +1,3 @@
-
 use super::TemplateFile;
 
 const PACKAGE_JSON: &str = include_str!("../../templates/hono/package.json");
@@ -17,21 +16,55 @@ const DEVCONTAINER: &str = include_str!("../../templates/hono/.devcontainer/devc
 const GITIGNORE: &str = include_str!("../../templates/hono/.gitignore");
 const ENV_EXAMPLE: &str = include_str!("../../templates/hono/.env.example");
 
-
 pub fn files() -> Vec<TemplateFile> {
     vec![
-        TemplateFile { path: "package.json",                    content: PACKAGE_JSON       },
-        TemplateFile { path: "tsconfig.json",                   content: TSCONFIG           },
-        TemplateFile { path: "pnpm-locl.yaml",                  content: PNPM_LOCK          },
-        TemplateFile { path: "pnpm-workspace.yaml",             content: PNPM_WORKSPACE     },
-        TemplateFile { path: "README.md",                       content: README             },
-        TemplateFile { path: "src/index.ts",                    content: INDEX_TS           },
-        TemplateFile { path: "src/app.ts",                      content: APP_TS             },
-        TemplateFile { path: "src/routes/index.ts",             content: ROUTES_INDEX       },
-        TemplateFile { path: "src/controllers/index.ts",        content: CONTROLLERS_INDEX  },
-        TemplateFile { path: ".gitignore",                      content: GITIGNORE          },
-        TemplateFile { path: ".env.example",                    content: ENV_EXAMPLE        },
-        TemplateFile { path: ".devcontainer/devcontainer.json", content: DEVCONTAINER       },
+        TemplateFile {
+            path: "package.json",
+            content: PACKAGE_JSON,
+        },
+        TemplateFile {
+            path: "tsconfig.json",
+            content: TSCONFIG,
+        },
+        TemplateFile {
+            path: "pnpm-locl.yaml",
+            content: PNPM_LOCK,
+        },
+        TemplateFile {
+            path: "pnpm-workspace.yaml",
+            content: PNPM_WORKSPACE,
+        },
+        TemplateFile {
+            path: "README.md",
+            content: README,
+        },
+        TemplateFile {
+            path: "src/index.ts",
+            content: INDEX_TS,
+        },
+        TemplateFile {
+            path: "src/app.ts",
+            content: APP_TS,
+        },
+        TemplateFile {
+            path: "src/routes/index.ts",
+            content: ROUTES_INDEX,
+        },
+        TemplateFile {
+            path: "src/controllers/index.ts",
+            content: CONTROLLERS_INDEX,
+        },
+        TemplateFile {
+            path: ".gitignore",
+            content: GITIGNORE,
+        },
+        TemplateFile {
+            path: ".env.example",
+            content: ENV_EXAMPLE,
+        },
+        TemplateFile {
+            path: ".devcontainer/devcontainer.json",
+            content: DEVCONTAINER,
+        },
     ]
 }
-

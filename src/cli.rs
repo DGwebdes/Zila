@@ -1,4 +1,3 @@
-
 use clap::Parser;
 use clap::Subcommand;
 
@@ -16,11 +15,8 @@ pub struct Cli {
 
 #[derive(Subcommand)]
 pub enum Commands {
-    New {
-        name: String
-    },
+    New { name: String },
 }
-
 
 pub enum Framework {
     React,
@@ -40,4 +36,3 @@ pub struct ProjectConfig {
     pub framework: Framework,
     pub package_manager: PackageManager,
 }
-
