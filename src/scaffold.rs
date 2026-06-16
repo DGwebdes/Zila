@@ -3,19 +3,16 @@ use colored::Colorize;
 use std::fs;
 use std::path::Path;
 use std::process::Command;
-// use crate::templates::TemplateFile;
 
 pub fn run(config: &ProjectConfig) -> Result<(), anyhow::Error> {
     let pm = match config.package_manager {
         PackageManager::Npm => "npm",
         PackageManager::Pnpm => "pnpm",
-        PackageManager::Bun => "bun",
     };
 
     let pm_url = match config.package_manager {
         PackageManager::Npm => "https://nodejs.org",
         PackageManager::Pnpm => "https://pnpm.io",
-        PackageManager::Bun => "https://bun.sh",
     };
 
     check_node_version()?;
@@ -37,7 +34,6 @@ pub fn run(config: &ProjectConfig) -> Result<(), anyhow::Error> {
     let files = match config.framework {
         Framework::React => crate::templates::react::files(),
         Framework::Express => crate::templates::express::files(),
-        Framework::Hono => crate::templates::hono::files(),
     };
 
     let root = Path::new(&config.name);

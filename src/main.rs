@@ -19,7 +19,7 @@ fn run_app() -> anyhow::Result<()> {
 
     match cli.command {
         Some(Commands::New { name }) => {
-            println!("GodZila {} into existence...", name);
+            println!("Zila summons {} into existence...", name);
 
             let config = prompts::ask(name)?;
 

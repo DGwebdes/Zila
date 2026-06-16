@@ -5,7 +5,7 @@ A fast, opinionated project scaffolder built in Rust. Yeet a project into existe
 ## Requirements
 
 - Node.js >= 24.16.0
-- npm, pnpm, or bun
+- npm, pnpm
 
 ## Installation
 
@@ -83,33 +83,13 @@ my-app/
 
 Includes: `cors`, `helmet`, basic CRUD route structure.
 
-**Hono + TypeScript**
-
-```
-my-app/
-├── src/
-│   ├── routes/
-│   ├── middleware/
-│   ├── controllers/
-│   ├── lib/
-│   ├── app.ts
-│   └── index.ts
-├── tsconfig.json
-├── .devcontainer/
-├── .env.example
-└── package.json
-```
-
-Includes: `cors`, `secureHeaders`, basic CRUD route structure.
-
 ## Roadmap
 
 ### v1 (current)
 - [x] React + Vite + TypeScript + Tailwind
 - [x] Express + TypeScript
-- [x] Hono + TypeScript
 - [x] Interactive prompts
-- [x] Package manager selection (npm, pnpm, bun)
+- [x] Package manager selection (npm, pnpm)
 - [x] Git initialization
 - [x] Devcontainer support
 

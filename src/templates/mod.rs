@@ -1,5 +1,4 @@
 pub mod express;
-pub mod hono;
 pub mod react;
 
 pub struct TemplateFile {

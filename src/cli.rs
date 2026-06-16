@@ -3,7 +3,7 @@ use clap::Subcommand;
 
 #[derive(Parser)]
 #[command(
-    name = "zila",
+    name = "zila-cli",
     about = "a god, if you will, of scaffolding projects",
     version = "0.1.0"
 )]
@@ -20,13 +20,11 @@ pub enum Commands {
 pub enum Framework {
     React,
     Express,
-    Hono,
 }
 
 pub enum PackageManager {
     Npm,
     Pnpm,
-    Bun,
 }
 
 #[allow(dead_code)]

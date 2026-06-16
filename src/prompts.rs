@@ -10,7 +10,6 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
     let frameworks = vec![
         "React      (Vite + Typescript + Tailwindcss)",
         "Express    (Typescript REST API)",
-        "Hono       (Typescript, lightweight and fast)",
     ];
 
     let framework_index = Select::with_theme(&theme)
@@ -22,11 +21,10 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
     let framework = match framework_index {
         0 => Framework::React,
         1 => Framework::Express,
-        2 => Framework::Hono,
         _ => Framework::React,
     };
 
-    let package_managers = vec!["npm", "pnpm", "bun"];
+    let package_managers = vec!["npm", "pnpm"];
 
     let pm_index = Select::with_theme(&theme)
         .with_prompt("Who's the manager?")
@@ -37,20 +35,17 @@ pub fn ask(name: String) -> Result<ProjectConfig, anyhow::Error> {
     let package_manager = match pm_index {
         0 => PackageManager::Npm,
         1 => PackageManager::Pnpm,
-        2 => PackageManager::Bun,
         _ => PackageManager::Pnpm,
     };
 
     let framework_name = match framework {
         Framework::React => "React + Vite + Typescript + Tailwindcss",
         Framework::Express => "Express + Typescript",
-        Framework::Hono => "Hono + Typescript",
     };
 
     let pm_name = match package_manager {
         PackageManager::Npm => "npm",
         PackageManager::Pnpm => "pnpm",
-        PackageManager::Bun => "bun",
     };
 
     println!("\n {}", "Project Summary".cyan().bold());
